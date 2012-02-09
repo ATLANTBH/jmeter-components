@@ -1,0 +1,6 @@
+# Compiled source #
+###################
+*.classpath
+*.project
+*.settings
+target
