@@ -46,6 +46,12 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		    <dependency>
+        <groupId>net.sf.json-lib</groupId>
+        	<artifactId>json-lib</artifactId>
+       		 <version>2.4</version>
+       		 <classifier>jdk15</classifier>
+   		 </dependency>
 	</dependencies>
 	
 	<build>
@@ -63,7 +69,7 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2-beta-2</version>
 				<configuration>
-					<finalName>ABH-OAuth-plugin</finalName>
+					<finalName>ABH-plugin</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
