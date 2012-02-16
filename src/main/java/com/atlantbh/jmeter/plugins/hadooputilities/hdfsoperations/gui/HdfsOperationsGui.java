@@ -1,4 +1,4 @@
-package com.atlantbh.jmeter.plugins.hadooputilities.hdfsoperations;
+package com.atlantbh.jmeter.plugins.hadooputilities.hdfsoperations.gui;
 
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
@@ -6,6 +6,8 @@ import org.apache.jmeter.gui.util.VerticalPanel;
 import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jorphan.gui.JLabeledTextField;
+
+import com.atlantbh.jmeter.plugins.hadooputilities.hdfsoperations.HdfsOperations;
 
 /**
  * Java class representing GUI for the HDFS Operations component in JMeter
