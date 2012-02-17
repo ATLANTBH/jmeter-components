@@ -1,7 +1,6 @@
 package com.atlantbh.jmeter.plugins.hbasecomponents.config;
 
 import java.util.concurrent.ConcurrentHashMap;
-import com.abh.util.JMeterVarParser;
 
 import org.apache.jmeter.testelement.TestListener;
 import org.apache.jmeter.threads.JMeterVariables;
