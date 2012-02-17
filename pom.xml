@@ -14,6 +14,14 @@
 		<java-version>1.6</java-version>
 		<jmeter.version>2.6</jmeter.version>
 	</properties>
+	
+	
+	<repositories>
+		<repository>
+			<id>cloudera repository</id>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -44,7 +52,7 @@
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-core</artifactId>
-			<version>0.20.2</version>
+			<version>0.20.2-cdh3u0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.mortbay.jetty</groupId>
@@ -59,7 +67,7 @@
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase</artifactId>
-			<version>0.90.5</version>
+			<version>0.90.1-cdh3u0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.hadoop</groupId>
