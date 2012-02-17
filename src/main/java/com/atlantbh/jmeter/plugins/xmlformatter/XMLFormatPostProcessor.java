@@ -17,7 +17,7 @@ import org.apache.jorphan.logging.LoggingManager;
 import org.apache.log.Logger;
 import org.w3c.dom.Document;
 
-import com.abh.util.XmlUtil;
+import com.atlantbh.jmeter.plugins.xmlformatter.XmlUtil;
 
 public class XMLFormatPostProcessor extends AbstractTestElement implements
 		Cloneable, Serializable, PostProcessor, TestElement {
