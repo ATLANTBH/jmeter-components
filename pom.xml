@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.atlantbh.jmeter</groupId>
-	<artifactId>components</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>atlantbh-components</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>AtlantBH custom JMeter components</name>
@@ -128,7 +128,8 @@
 					  <overWriteReleases>false</overWriteReleases>
 					  <overWriteSnapshots>false</overWriteSnapshots>
 					  <overWriteIfNewer>true</overWriteIfNewer>
-					  <excludeGroupIds>org.apache.jmeter,javax.activation,org.apache.avalon,org.apache.bsf</excludeGroupIds>
+					  <excludeGroupIds>org.apache.jmeter,javax.activation,org.apache.avalon,org.apache.bsf,avalon,commons-codec,commons-collections,commons-httpclient,commons-io,commons-jexl,commons-lang,commons-logging,commons-net,excalibur,org.apache.geronimo.specs,org.htmlparser,org.apache.httpcomponents,jcharts,logkit,oro,xalan,xerces,xml-apis,xpp3,bsf,org.beanshell,org.apache.xmlgraphics</excludeGroupIds>
+					  <excludeArtifactIds>commons-jexl,js,jtidy,junit,mail,serializer,soap,xstream,xmlenc,jdom</excludeArtifactIds>
 					 </configuration>
 				  </execution>
 				</executions>
