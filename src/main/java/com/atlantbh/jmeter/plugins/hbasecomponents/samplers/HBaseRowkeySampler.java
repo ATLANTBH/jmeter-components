@@ -13,7 +13,7 @@ import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnection;
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnectionVariable;
 import com.atlantbh.jmeter.plugins.hbasecomponents.utils.Row2XML;
 
-import com.abh.util.JMeterVarParser;
+import com.atlantbh.jmeter.plugins.hbasecomponents.config.JMeterVarParser;
 
 public class HBaseRowkeySampler extends AbstractSampler implements Sampler {
 
