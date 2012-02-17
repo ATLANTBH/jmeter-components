@@ -6,12 +6,12 @@ import org.apache.hadoop.hbase.client.HTableInterface;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;
 import org.apache.hadoop.hbase.client.Scan;
+import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.filter.Filter;
 import org.apache.hadoop.hbase.filter.FilterList;
+import org.apache.hadoop.hbase.filter.FilterList.Operator;
 import org.apache.hadoop.hbase.filter.PageFilter;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
-import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
-import org.apache.hadoop.hbase.filter.FilterList.Operator;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.samplers.Entry;
@@ -21,12 +21,12 @@ import org.apache.jmeter.threads.JMeterVariables;
 
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnection;
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnectionVariable;
+import com.atlantbh.jmeter.plugins.hbasecomponents.utils.Row2XML;
 import com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter.FilterParser;
 import com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter.HBaseFilterParser;
 import com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter.Node;
-import com.atlantbh.jmeter.plugins.hbasecomponents.utils.Row2XML;
 
-import com.abh.util.JMeterVarParser;
+import com.atlantbh.jmeter.plugins.hbasecomponents.config.JMeterVarParser;
 
 public class HBaseScanSampler extends AbstractSampler implements Sampler {
 
