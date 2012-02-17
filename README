@@ -51,11 +51,12 @@
   Installation Instructions
   -------------------------
   
-	-	Copy the compiled jar (atlantbh-components-1.0.0-SNAPSHOT.jar) from the 'target' 
-		directory to the '/lib/ext' directory in your local JMeter installation.
+	-	Copy the compiled jar (atlantbh-components-1.0.0-SNAPSHOT.jar) 
+		from the 'target' directory to the '/lib/ext' directory in your 
+		local JMeter installation.
 		
-	-	Copy all the jars from the 'target/lib' directory to the 'lib' directory 
-		in your local JMeter installation.
+	-	Copy all the jars from the 'target/lib' directory to the 'lib' 
+		directory in your local JMeter installation.
   
   To test that everything is installed correctly, try adding the OAuth Sampler
   in a JMeter test plan (JMeter menu -> Edit -> Add -> Sampler -> OAuth Sampler).
