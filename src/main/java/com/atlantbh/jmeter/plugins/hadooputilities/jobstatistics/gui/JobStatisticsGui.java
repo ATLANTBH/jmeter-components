@@ -75,7 +75,7 @@ private static final long serialVersionUID = 1L;
 		jobStatsGroup.add(getJobCountersByIdAndGroupNameCheckBox);
 		jobStatsGroup.add(getJobStatisticsByJobIdCheckBox);
 		
-		registerCheckBoxListener(getJobCountersByIdAndGroupNameCheckBox);
+		registerCheckBoxForItemListener(getJobCountersByIdAndGroupNameCheckBox);
 		
 		jobStatsPanel.add(getJobCountersByIdCheckBox);
 		jobStatsPanel.add(getJobCountersByIdAndGroupNameCheckBox);
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 1L;
 		}
 	}	
 	
-	public void registerCheckBoxListener(JCheckBox checkBox)
+	public void registerCheckBoxForItemListener(JCheckBox checkBox)
 	{
 		checkBox.addItemListener(new ItemListener() {
 			
