@@ -138,6 +138,7 @@ public class HdfsOperations extends AbstractSampler {
 			result.setSuccessful(true);
 		} catch (IOException e1) {
 			result.setResponseData(e1.getMessage().getBytes());
+			e1.printStackTrace();
 			result.setSuccessful(false);
 		} catch (Exception e2) {
 			result.setResponseData(e2.getMessage().getBytes());

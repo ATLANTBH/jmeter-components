@@ -17,7 +17,7 @@ import org.apache.jorphan.logging.LoggingManager;
 import org.apache.log.Logger;
 import org.w3c.dom.Document;
 
-import com.atlantbh.jmeter.plugins.xmlformatter.XmlUtil;
+//import com.atlantbh.jmeter.plugins.xmlformatter.XmlUtil;
 
 public class XMLFormatPostProcessor extends AbstractTestElement implements
 		Cloneable, Serializable, PostProcessor, TestElement {
@@ -41,7 +41,7 @@ public class XMLFormatPostProcessor extends AbstractTestElement implements
 	public String serialize2(String unformattedXml) throws Exception {
 		// final Document document =
 		// XMLUtils.getXmlDocFromString(unformattedXml);
-		final Document document = XmlUtil.stringToXml(unformattedXml);
+		//final Document document = XmlUtil.stringToXml(unformattedXml);
 		TransformerFactory tfactory = TransformerFactory.newInstance();
 		StringWriter buffer = new StringWriter();
 		Transformer serializer = tfactory.newTransformer();
@@ -49,7 +49,7 @@ public class XMLFormatPostProcessor extends AbstractTestElement implements
 		serializer.setOutputProperty(OutputKeys.INDENT, "yes");
 		serializer.setOutputProperty(
 				"{http://xml.apache.org/xslt}indent-amount", "2");
-		serializer.transform(new DOMSource(document), new StreamResult(buffer));
+		//serializer.transform(new DOMSource(document), new StreamResult(buffer));
 
 		return buffer.toString();
 	}
