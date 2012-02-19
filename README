@@ -1,4 +1,3 @@
-
 		AtlantBH Custom JMeter Components
 			
   
@@ -26,6 +25,7 @@
 	
 	o	HBase RowKey Sampler
 	
+  For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
 	
   
   Requirements
