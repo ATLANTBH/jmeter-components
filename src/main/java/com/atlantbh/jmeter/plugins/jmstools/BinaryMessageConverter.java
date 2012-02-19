@@ -26,16 +26,16 @@ public class BinaryMessageConverter implements MessageConverter{
 	}
 
 	@Override
-	public Object fromMessage(Message arg0) throws JMSException, MessageConversionException {
+	public Object fromMessage(Message message) throws JMSException, MessageConversionException {
 		
-		Enumeration<String> names = arg0.getPropertyNames();
+		Enumeration<String> names = message.getPropertyNames();
 		messageProperties = new HashMap<String, String>();
 		while(names.hasMoreElements()){
 			String name = names.nextElement();
-			messageProperties.put(name, arg0.getStringProperty(name));
+			messageProperties.put(name, message.getStringProperty(name));
 		}
 		
-		BytesMessage bm = (BytesMessage) arg0;
+		BytesMessage bm = (BytesMessage) message;
     	byte[] transfer = new byte[(int) bm.getBodyLength()];
     	bm.readBytes(transfer);
     	return new String(transfer);

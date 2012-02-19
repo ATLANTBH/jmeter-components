@@ -10,6 +10,10 @@ import org.apache.jmeter.testelement.TestElement;
 
 import com.atlantbh.jmeter.plugins.xmlformatter.XMLFormatPostProcessor;
 
+/**
+ * Class that exposes {@link XMLFormatPostProcessor} as PostProcessor.
+ *
+ */
 public class XMLFormatPostProcessorGui extends AbstractPostProcessorGui 
 {
 

@@ -1,6 +1,11 @@
 package com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter;
 
+import com.atlantbh.jmeter.plugins.hbasecomponents.samplers.HBaseScanSampler;
 
+/**
+ * Filter parser used in {@link HBaseScanSampler}
+ *
+ */
 public class FilterParser {
 
 	public static final String[] COMPARE_OPERATORS = { "=", "!=", "<", ">", "<=", ">=" };

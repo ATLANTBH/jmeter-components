@@ -10,6 +10,10 @@ import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.filter.FilterList.Operator;
 import org.apache.hadoop.hbase.util.Bytes;
 
+/**
+ * Class used for conversion of custom written filters into HBase filter.
+ *
+ */
 public class HBaseFilterParser {
 
 	private static final Map<String, CompareOp> OPERATOR_MAPINGS = new HashMap<String, CompareOp>();

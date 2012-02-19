@@ -111,7 +111,6 @@ private static final long serialVersionUID = 1L;
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if (e.getStateChange() == ItemEvent.SELECTED)
 				{
 					groupOfCountersNameTextField.setEnabled(true);

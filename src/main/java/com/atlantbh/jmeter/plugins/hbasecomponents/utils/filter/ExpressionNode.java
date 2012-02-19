@@ -1,5 +1,9 @@
 package com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter;
 
+/**
+ * Helper class for filters.
+ *
+ */
 public class ExpressionNode extends Node {
 	private String columnFamily;
 	private String qualifier;

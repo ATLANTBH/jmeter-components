@@ -57,7 +57,6 @@ public class HdfsOperationsGui extends AbstractSamplerGui {
 	
 	@Override
 	public TestElement createTestElement() {
-		// TODO Auto-generated method stub
 		HdfsOperations operations = new HdfsOperations();
 		modifyTestElement(operations);
 		return operations;
@@ -75,7 +74,6 @@ public class HdfsOperationsGui extends AbstractSamplerGui {
 
 	@Override
 	public void modifyTestElement(TestElement element) {
-		// TODO Auto-generated method stub
 		super.configureTestElement(element);
 		if (element instanceof HdfsOperations)
 		{
