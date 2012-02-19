@@ -31,5 +31,4 @@ public class BinaryMessagepostProcessor implements MessagePostProcessor{
 		return null;
 	}
 	
-	
 }

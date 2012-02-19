@@ -109,7 +109,6 @@ public class JobStatistics extends AbstractSampler {
 	
 	@Override
 	public SampleResult sample(Entry arg0) {
-		// TODO Auto-generated method stub
 		
 		JobLayer jobLayer = new JobLayer();
 		TaskLayer taskLayer = new TaskLayer();

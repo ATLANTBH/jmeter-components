@@ -3,6 +3,10 @@ package com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Helper class for filters.
+ *
+ */
 public abstract class Node {
 
 	private List<Node> childs;

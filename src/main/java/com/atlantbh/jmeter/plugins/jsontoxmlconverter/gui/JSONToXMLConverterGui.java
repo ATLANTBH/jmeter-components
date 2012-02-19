@@ -11,7 +11,7 @@ import org.apache.jorphan.gui.JLabeledTextField;
 import com.atlantbh.jmeter.plugins.jsontoxmlconverter.JSONToXMLConverter;
 
 /**
- * This is JSON to XML converter GUI class which contains neccessary methods for making GUI component suitable for execution in JMeter
+ * This is JSON to XML converter GUI class which contains necessary methods for making GUI component suitable for execution in JMeter.
  * 
  * @author bjusufbe
  */

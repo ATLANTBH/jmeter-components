@@ -15,11 +15,13 @@ import com.atlantbh.jmeter.plugins.hbasecomponents.utils.Row2XML;
 
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.JMeterVarParser;
 
+/**
+ * Sampler that enable getting HBase record by its rowkey.
+ *
+ */
 public class HBaseRowkeySampler extends AbstractSampler implements Sampler {
 
 	private static final long serialVersionUID = 6701023631583398986L;
-
-	//private static final Logger LOG = LoggingManager.getLoggerForClass();
 
 	@Override
 	public SampleResult sample(Entry entry) {
@@ -109,7 +111,6 @@ public class HBaseRowkeySampler extends AbstractSampler implements Sampler {
 
 	public void setRowKey(String rowKey) {
 		setProperty("HB_ROWKEY", rowKey);
-
 	}
 	
 	public Boolean getOmitVars() {
@@ -136,6 +137,5 @@ public class HBaseRowkeySampler extends AbstractSampler implements Sampler {
 			throw new RuntimeException(msg);
 		}
 	}
-		
 
 }

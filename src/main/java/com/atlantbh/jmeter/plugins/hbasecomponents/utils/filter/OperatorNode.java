@@ -3,6 +3,10 @@ package com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Helper class for filters.
+ *
+ */
 public class OperatorNode extends Node {
 
 	public static final String AND = " AND ";

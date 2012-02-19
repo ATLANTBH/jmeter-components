@@ -28,6 +28,10 @@ import com.atlantbh.jmeter.plugins.hbasecomponents.utils.filter.Node;
 
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.JMeterVarParser;
 
+/**
+ * Sampler that enables scanning HBase table by specifying filter.
+ *
+ */
 public class HBaseScanSampler extends AbstractSampler implements Sampler {
 
 	private static final long serialVersionUID = -4685749611597443212L;
@@ -47,6 +51,7 @@ public class HBaseScanSampler extends AbstractSampler implements Sampler {
 		Node node = FilterParser.parse(filter);
 		Filter fil = HBaseFilterParser.parse(node);
 	}
+	
 	public SampleResult sample(Entry arg0) {
 
 		StringBuilder response = new StringBuilder();

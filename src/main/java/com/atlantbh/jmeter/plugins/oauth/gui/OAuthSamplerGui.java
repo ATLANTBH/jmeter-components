@@ -21,9 +21,9 @@ import org.apache.jorphan.gui.JLabeledTextField;
 import com.atlantbh.jmeter.plugins.oauth.OAuthSampler;
 
 /**
- * Frontend to the REST sampler.
+ * Frontend to the OAuth sampler.
  * 
- * It only eposes GET/POST/PUT/DELETE.
+ * It only exposes GET/POST/PUT/DELETE.
  */
 public class OAuthSamplerGui extends AbstractSamplerGui {
     private static final long serialVersionUID = -5576774730632101012L;

@@ -7,7 +7,20 @@ import org.apache.hadoop.hbase.KeyValue;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.jmeter.threads.JMeterVariables;
 
+/**
+ * Helper class for transforming HBase row into XML string representation.
+ *
+ */
 public class Row2XML {
+	
+	/**
+	 * Convert HBase {@link Result} row into string XML using all timestamps.
+	 * If parameter vars is not null for every Column is generated one JMeter variable.
+	 * @param result - row to be converted
+	 * @param vars - if not null in this variable are added all Columns from this row
+	 * @param index - add this index to all column names
+	 * @return - XML string representation of row
+	 */
 	public static String row2xmlstring(Result result, JMeterVariables vars, int index) {
 		StringBuilder xml = new StringBuilder();
 		
@@ -44,6 +57,14 @@ public class Row2XML {
 		return xml.toString();
 	}
 	
+	/**
+	 * Convert HBase {@link Result} row into string XML using latest timestamp.
+	 * If parameter vars is not null for every Column is generated one JMeter variable.
+	 * @param result - row to be converted
+	 * @param vars - if not null in this variable are added all Columns from this row
+	 * @param index - add this index to all column names
+	 * @return - XML string representation of row
+	 */
 	public static String row2xmlStringLatest(Result result, JMeterVariables vars, int index)
 	{
 		StringBuilder xml = new StringBuilder();

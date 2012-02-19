@@ -10,17 +10,17 @@ import javax.swing.border.EmptyBorder;
 import org.apache.jmeter.config.gui.AbstractConfigGui;
 import org.apache.jmeter.gui.util.VerticalPanel;
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jmeter.threads.JMeterVariables;
 import org.apache.jorphan.gui.JLabeledTextField;
 
 import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnection;
-import com.atlantbh.jmeter.plugins.hbasecomponents.config.HBaseConnectionVariable;
 
+/**
+ * GUI for {@link HBaseConnection}
+ *
+ */
 public class HBaseConnectionGui  extends AbstractConfigGui {
 
-
 	private static final long serialVersionUID = -2817355736341379758L;
-	//private static final Logger log = LoggingManager.getLoggerForClass();
 	
 	private JLabeledTextField zkHostTF;
 	private JLabeledTextField connNameTF;
@@ -44,7 +44,6 @@ public class HBaseConnectionGui  extends AbstractConfigGui {
 		mainPanel.add(connNameTF = createTF("Connection name"));
 		mainPanel.add(zkHostTF = createTF("ZK host"));
 
-	
 		add(mainPanel, BorderLayout.CENTER);
 	}
 	

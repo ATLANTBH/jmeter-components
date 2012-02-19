@@ -70,7 +70,6 @@ public class JSONToXMLConverter extends AbstractSampler {
 		
 	@Override
 	public SampleResult sample(Entry e) {
-		//TODO Auto-generated method stub
 		SampleResult result = new SampleResult();
 
 		result.setSampleLabel(getName());

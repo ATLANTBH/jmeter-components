@@ -140,6 +140,7 @@ public class RestSampler extends HTTPSampler2 {
     protected HTTPSampleResult sample(URL url, String method, boolean areFollowingRedirect, int frameDepth){
     	throw new RuntimeException("Not implemented - should not be called");
     }
+    
     /**
      * Method invoked by JMeter when a sample needs to happen. It's actually an
      * indirect call from the main sampler interface. it's resolved in the base
@@ -150,7 +151,6 @@ public class RestSampler extends HTTPSampler2 {
      * modify is that I needed to get the body content from a text field in the
      * GUI rather than a file.
      */
-    //@SuppressWarnings("deprecation")
 	public SampleResult sample() {
     	HttpMethodBase httpMethod = null;
         HttpClient client = null;

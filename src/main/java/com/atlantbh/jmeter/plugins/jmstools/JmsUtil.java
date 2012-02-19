@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 
-
 import org.apache.jmeter.config.Arguments;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerClient;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
@@ -18,7 +17,7 @@ import org.apache.qpid.url.AMQBindingURL;
 import org.springframework.jms.core.JmsTemplate;
 
 public class JmsUtil implements JavaSamplerClient{
-
+	
 	@Override
 	public Arguments getDefaultParameters() {
 
@@ -38,7 +37,6 @@ public class JmsUtil implements JavaSamplerClient{
 	public SampleResult runTest(JavaSamplerContext ctx) {
 		
 		
-		System.out.println(ctx.getParameter("connection.url"));
 		SampleResult result = new SampleResult();
 		result.setContentType("plain/text");
 		result.setDataType(SampleResult.TEXT);

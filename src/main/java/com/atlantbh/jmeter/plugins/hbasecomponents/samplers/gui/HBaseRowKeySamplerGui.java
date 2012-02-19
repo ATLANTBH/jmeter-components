@@ -15,6 +15,10 @@ import org.apache.jorphan.gui.JLabeledTextField;
 
 import com.atlantbh.jmeter.plugins.hbasecomponents.samplers.HBaseRowkeySampler;
 
+/**
+ * GUI for {@link HBaseRowkeySampler}
+ *
+ */
 public class HBaseRowKeySamplerGui  extends AbstractSamplerGui{
 
 	private static final long serialVersionUID = -7273634183896280753L;

@@ -9,6 +9,10 @@ import javax.xml.transform.stream.*;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
+/**
+ * This class provides transformation string to XML {@link Document} and vice versa.
+ *
+ */
 public class XmlUtil {
 
 private static Transformer transformer;
@@ -29,15 +33,32 @@ private static DocumentBuilder builder;
 		}
 	}
 	
+	/**
+	 * Convert string to XML {@link Document}
+	 * @param string - string to be converted
+	 * @return - {@link Document}
+	 * @throws Exception - if {@link DocumentBuilder} is not initialized
+	 */
 	public static Document stringToXml(String string) throws Exception
 	{
-		if (builder == null) throw new Exception("DocumentBuilder is null.");
+		if (builder == null) {
+			throw new Exception("DocumentBuilder is null.");
+		}
 		return builder.parse(new InputSource(new ByteArrayInputStream(string.getBytes("UTF-8"))));
 	
 	}
+	
+	/**
+	 * Convert XML {@link Document} to its string representation.
+	 * @param document for conversion
+	 * @return - string representation of XML {@link Document}
+	 * @throws Exception - if {@link DocumentBuilder} is not initialized
+	 */
 	public static String xmlToString(Document document) throws Exception
 	{
-		if (transformer == null) throw new Exception("Transformer is null");
+		if (transformer == null) {
+			throw new Exception("Transformer is null");
+		}
 		Source xmlSource = new DOMSource(document);
 		StringWriter stringWriter = new StringWriter();
         Result result = new StreamResult(stringWriter);
