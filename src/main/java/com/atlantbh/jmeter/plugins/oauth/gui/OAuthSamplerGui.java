@@ -1,3 +1,12 @@
+/*!
+ * AtlantBH Custom Jmeter Components v1.0.0
+ * http://www.atlantbh.com/jmeter-components/
+ *
+ * Copyright 2011, AtlantBH
+ *
+ * Licensed under the under the Apache License, Version 2.0.
+ */
+
 package com.atlantbh.jmeter.plugins.oauth.gui;
 
 import java.awt.BorderLayout;
