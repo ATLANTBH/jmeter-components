@@ -11,7 +11,7 @@ developed by AtlantBH that currently includes:
 
 +	REST Sampler
 
-+	JMS Tools
++	JMS Tools (Java Request Sampler)
 
 +	JSON to XML Converter
 
