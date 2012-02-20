@@ -19,8 +19,6 @@
 	
 	o	HDFS Operations Sampler
 	
-	o	HBase Connection Config Element
-	
 	o	HBase Scan Sampler
 	
 	o	HBase RowKey Sampler
@@ -66,7 +64,10 @@
   
   Licensing and legal issues
   --------------------------
-
+  Copyright 2011 AtlantBH
+  
+  AtlantBH Custom Jmeter Components is licensed under the Apache 2.0 License.
+  
   For legal and licensing issues, please look the files:
   LICENSE
   NOTICE
