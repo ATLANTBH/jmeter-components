@@ -42,9 +42,11 @@ Build Instructions
 -----------------------
 
 -	Go to the top-level directory of the project and run:
+
 	```
 	mvn clean install
 	```
+	
 -	All components will be compiled in the 'target' subdirectory.
 
 
@@ -68,7 +70,8 @@ Copyright 2011 AtlantBH
 
 AtlantBH Custom Jmeter Components is licensed under the Apache License, Version 2.0.
 
-For legal and licensing issues, please look the files:
-LICENSE
+For legal and licensing issues, please look the files:  
+LICENSE  
 NOTICE
+  
   
