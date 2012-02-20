@@ -44,7 +44,7 @@ Build Instructions
 -	Go to the top-level directory of the project and run:  
 	```
 	mvn clean install
-	```	
+	```	 
 -	All components will be compiled in the 'target' subdirectory.
 
 
