@@ -25,6 +25,8 @@
 	
 	o	HBase RowKey Sampler
 	
+	o	Hadoop Job Tracker Sampler	
+	
   For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
 	
   
