@@ -23,7 +23,9 @@ developed by AtlantBH that currently includes:
 
 +	HBase RowKey Sampler
 
-+	Hadoop Job Tracker Sampler	
++	Hadoop Job Tracker Sampler
+
++	HBase CRUD Sampler	
 
 For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
 
