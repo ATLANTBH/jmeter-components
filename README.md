@@ -27,6 +27,8 @@ developed by AtlantBH that currently includes:
 
 +	HBase CRUD Sampler	
 
++	JSON utils (JSON Path Assertion, JSON Path Extractor, JSON Formatter)
+
 For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
 
 
