@@ -153,7 +153,7 @@ public class HBaseScanSampler extends AbstractSampler implements Sampler {
 				response.append("</response>\n");
 
 				// Set sampler data, type, success, ...
-				result.setResponseData(response.toString(), null);
+				result.setResponseData(response.toString(), "UTF-8");
 				result.setDataType(SampleResult.TEXT);
 				result.setSuccessful(true);
 				result.setSamplerData(request.toString());

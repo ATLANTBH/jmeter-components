@@ -9,6 +9,7 @@
 
 package com.atlantbh.jmeter.plugins.hbasecomponents.utils;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
 
@@ -29,8 +30,9 @@ public class Row2XML {
 	 * @param vars - if not null in this variable are added all Columns from this row
 	 * @param index - add this index to all column names
 	 * @return - XML string representation of row
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static String row2xmlstring(Result result, JMeterVariables vars, int index) {
+	public static String row2xmlstring(Result result, JMeterVariables vars, int index) throws UnsupportedEncodingException {
 		StringBuilder xml = new StringBuilder();
 		
 		NavigableMap<byte[], NavigableMap<byte[], byte[]>> map = result.getNoVersionMap();
@@ -44,8 +46,8 @@ public class Row2XML {
 			
 			NavigableMap<byte[], byte[]> famMap = result.getFamilyMap(fam);
 			for(Entry<byte[] , byte[]> e  : famMap.entrySet()) {
-				String key = new String(e.getKey());
-				String value = new String(e.getValue());
+				String key = new String(e.getKey(),"UTF-8");
+				String value = new String(e.getValue(),"UTF-8");
 				xml.append("  <column name=\"" + key + "\" value=\"" + value + "\"/>\n");
 				
 				if (vars != null) {
