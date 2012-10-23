@@ -37,7 +37,7 @@ Requirements
 
 +	Java 1.6 or greater
 
-+ 	JMeter 2.6
++ 	JMeter 2.8
 
 +	Maven 3.0 or greater
 
@@ -59,14 +59,8 @@ Installation Instructions
 
 - Go to the top-level directory of the project and run: 
 	```
-	mvn clean assembly:single
+	mvn clean install
 	```	 
--	Copy the compiled jar (ABH-plugin.jar) 
-	from the 'target' directory to the '/lib/ext' directory in your 
-	local JMeter installation.
-
-##### jar without dependencies
-
 -	Copy the compiled jar (atlantbh-components-1.0.0-SNAPSHOT.jar) 
 	from the 'target' directory to the '/lib/ext' directory in your 
 	local JMeter installation.
