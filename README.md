@@ -54,11 +54,7 @@ Build Instructions
 
 Installation Instructions
 -----------------------
-
-- Go to the top-level directory of the project and run: 
-	```
-	mvn clean install
-	```	 
+	 
 -	Copy the compiled jar (atlantbh-components-1.0.0-SNAPSHOT.jar) 
 	from the 'target' directory to the '/lib/ext' directory in your 
 	local JMeter installation.
