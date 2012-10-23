@@ -55,8 +55,6 @@ Build Instructions
 Installation Instructions
 -----------------------
 
-#### Single jar with dependencies
-
 - Go to the top-level directory of the project and run: 
 	```
 	mvn clean install
