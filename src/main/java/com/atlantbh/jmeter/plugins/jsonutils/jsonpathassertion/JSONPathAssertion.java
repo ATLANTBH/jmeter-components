@@ -97,7 +97,7 @@ public class JSONPathAssertion extends AbstractTestElement implements Serializab
 		{
 			try 
 			{
-				if (checkJSONPathWithValidation(new String(responseData), getJsonPath(), getExpectedValue())) {
+				if (checkJSONPathWithValidation(new String(responseData,"UTF-8"), getJsonPath(), getExpectedValue())) {
 					result.setFailure(false);
 					result.setFailureMessage("");
 				}
