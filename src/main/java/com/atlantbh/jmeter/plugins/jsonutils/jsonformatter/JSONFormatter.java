@@ -10,11 +10,14 @@
 package com.atlantbh.jmeter.plugins.jsonutils.jsonformatter;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
 import org.apache.jmeter.processor.PostProcessor;
 import org.apache.jmeter.testelement.AbstractTestElement;
 import org.apache.jmeter.threads.JMeterContext;
+import org.apache.jorphan.logging.LoggingManager;
+import org.apache.log.Logger;
 
 /**
  * This is main class for JSON formatter which contains formatJSON method that takes sample result and do pretty
@@ -24,7 +27,7 @@ import org.apache.jmeter.threads.JMeterContext;
  */
 
 public class JSONFormatter extends AbstractTestElement implements PostProcessor {
-
+	private static final Logger LOG = LoggingManager.getLoggerForClass();
 	private static final long serialVersionUID = 1L;
 
 	public JSONFormatter() {
@@ -32,7 +35,6 @@ public class JSONFormatter extends AbstractTestElement implements PostProcessor 
 	}
 
 	public String formatJSON(String json) {
-
 		if (json.startsWith("[") && json.endsWith("]")) {
 			return JSONArray.fromObject(json).toString(4);
 		} else {
@@ -44,6 +46,11 @@ public class JSONFormatter extends AbstractTestElement implements PostProcessor 
 	public void process() {
 		JMeterContext context = getThreadContext();
 		String responseData = context.getPreviousResult().getResponseDataAsString();
-		context.getPreviousResult().setResponseData((this.formatJSON(responseData)).getBytes());
+
+		try {
+			context.getPreviousResult().setResponseData((this.formatJSON(responseData)).getBytes());
+		} catch(JSONException e) {
+			LOG.warn("Exception thrown while formatting JSON response", e);
+		}
 	}
 }
