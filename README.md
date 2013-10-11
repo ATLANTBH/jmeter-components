@@ -37,7 +37,7 @@ Requirements
 
 +	Java 1.6 or greater
 
-+ 	JMeter 2.8
++ 	JMeter 2.9
 
 +	Maven 3.0 or greater
 
