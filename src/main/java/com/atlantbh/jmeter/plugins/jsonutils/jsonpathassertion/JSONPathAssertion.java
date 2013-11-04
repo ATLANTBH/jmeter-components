@@ -81,7 +81,6 @@ public class JSONPathAssertion extends AbstractTestElement implements Serializab
 		}
 		
 		if (expectedValue.equalsIgnoreCase(actualValue.toString())) {
-			System.out.println("WORK");
 			return true;
 		} else {
 			String message = "Response doesn't contain expected value. \n" +

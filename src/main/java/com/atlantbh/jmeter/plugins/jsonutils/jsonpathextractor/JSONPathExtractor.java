@@ -57,8 +57,8 @@ public class JSONPathExtractor extends AbstractTestElement implements PostProces
 		if (null == jsonPathResult) {
 			throw new Exception("Invalid JSON path provided!");
 		} else if (jsonPathResult instanceof List && ((List<?>)jsonPathResult).isEmpty()) {
-			return "NULL";
-		}else{
+			return "null";
+		} else {
 			return jsonPathResult.toString();
 		}
 	}
@@ -83,14 +83,17 @@ public class JSONPathExtractor extends AbstractTestElement implements PostProces
 		catch (InvalidPathException e) 
 		{
 			System.out.println("Extract failed!. Invalid JSON path: " + e.getMessage());
+			vars.put(this.getVar(), "null");
 		} 
 		catch (ParseException e) 
 		{
 			System.out.println("Extract failed!. Invalid JSON path: " + e.getMessage());
+			vars.put(this.getVar(), "null");
 		} 
 		catch (Exception e) 
 		{
 			System.out.println(e.getMessage());
+			vars.put(this.getVar(), "null");
 		}	
 	}
 }
