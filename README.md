@@ -2,7 +2,7 @@ AtlantBH Custom JMeter Components
 =======================
   
 What is it?
------------------------
+----------------------
 
 AtlantBH Custom JMeter Components is a set of JMeter extensions
 developed by AtlantBH that currently includes:
