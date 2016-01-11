@@ -29,6 +29,8 @@ developed by AtlantBH that currently includes:
 
 +	JSON utils (JSON Path Assertion, JSON Path Extractor, JSON Formatter)
 
++	JTL Results Parser	
+
 For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
 
 
