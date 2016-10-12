@@ -9,37 +9,26 @@
 
 package com.atlantbh.jmeter.plugins.aws.s3;
 
-import java.io.File;
-
-import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.samplers.Entry;
 import org.apache.jmeter.samplers.SampleResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
+import java.io.File;
 
 /**
  * AWSS3 sampler enable upload and download objects to Amazon S3 storage
  * service.
- * 
- * 
+ *
+ *
  * @author faruk pasalic
- * 
+ *
  */
-public class AWSS3Uploader extends AbstractSampler {
+public class AWSS3Uploader extends BaseS3Sampler {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AWSS3Uploader.class);
 
 	private static final long serialVersionUID = 1L;
-
-	private static final String OBJECT = "object";
-	private static final String KEY = "key";
-	private static final String SECRET = "secret";
-	private static final String BUCKET = "bucket";
-	private static final String DESTINATION = "destination";
 
 	public AWSS3Uploader() {
 		super();
@@ -53,10 +42,8 @@ public class AWSS3Uploader extends AbstractSampler {
 		result.setDataType(SampleResult.TEXT);
 		result.sampleStart();
 		try {
-			BasicAWSCredentials creds = new BasicAWSCredentials(getKey(), getSecret());
-			AmazonS3 client = new AmazonS3Client(creds);
 
-			client.putObject(getBucket(), getDestination(), new File(getObject()));
+			getS3Client().putObject(getBucket(), getDestination(), new File(getObject()));
 
 			LOGGER.info("Upload finished.");
 			result.setResponseData("Upload finished".getBytes());
@@ -72,46 +59,6 @@ public class AWSS3Uploader extends AbstractSampler {
 		}
 		result.sampleEnd();
 		return result;
-	}
-
-	public void setObject(String object) {
-		setProperty(OBJECT, object);
-	}
-
-	public String getObject() {
-		return getProperty(OBJECT).getStringValue();
-	}
-
-	public void setDestination(String destination) {
-		setProperty(DESTINATION, destination);
-	}
-
-	public String getDestination() {
-		return getProperty(DESTINATION).getStringValue();
-	}
-
-	public void setKey(String key) {
-		setProperty(KEY, key);
-	}
-
-	public String getKey() {
-		return getProperty(KEY).getStringValue();
-	}
-
-	public void setSecret(String secret) {
-		setProperty(SECRET, secret);
-	}
-
-	public String getSecret() {
-		return getProperty(SECRET).getStringValue();
-	}
-
-	public void setBucket(String bucket) {
-		setProperty(BUCKET, bucket);
-	}
-
-	public String getBucket() {
-		return getProperty(BUCKET).getStringValue();
 	}
 
 }

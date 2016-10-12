@@ -1,17 +1,10 @@
 package com.atlantbh.jmeter.plugins.aws.s3.gui;
 
-import java.awt.BorderLayout;
-
-import javax.swing.BorderFactory;
-
-import org.apache.jmeter.gui.util.VerticalPanel;
-import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
+import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Reader;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jorphan.gui.JLabeledTextField;
 
-import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Reader;
-
-public class AWSS3ReaderGUI extends AbstractSamplerGui {
+public class AWSS3ReaderGUI extends BaseS3GUISampler {
 
 	private static final long serialVersionUID = 1L;
 	private JLabeledTextField ltfAwsKey = null;
@@ -20,28 +13,7 @@ public class AWSS3ReaderGUI extends AbstractSamplerGui {
 	private JLabeledTextField ltfObject = null;
 
 	public AWSS3ReaderGUI() {
-		super();
-		this.init();
-	}
-
-	private void init() {
-		setLayout(new BorderLayout());
-		setBorder(makeBorder());
-		add(makeTitlePanel(), BorderLayout.NORTH);
-
-		VerticalPanel panel = new VerticalPanel();
-		panel.setBorder(BorderFactory.createEtchedBorder());
-
-		ltfAwsKey = new JLabeledTextField("AWS Key");
-		ltfAwsSecret = new JLabeledTextField("AWS Secret");
-		ltfAwsBucket = new JLabeledTextField("AWS Bucket");
-		ltfObject = new JLabeledTextField("AWS Object");
-
-		panel.add(ltfAwsKey);
-		panel.add(ltfAwsSecret);
-		panel.add(ltfAwsBucket);
-		panel.add(ltfObject);
-		add(panel, BorderLayout.CENTER);
+		super(false);
 	}
 
 	@Override
@@ -59,7 +31,7 @@ public class AWSS3ReaderGUI extends AbstractSamplerGui {
 			d.setKey(ltfAwsKey.getText());
 			d.setSecret(ltfAwsSecret.getText());
 			d.setBucket(ltfAwsBucket.getText());
-			d.setObject(this.ltfObject.getText());
+			d.setObject(ltfObject.getText());
 		}
 	}
 
@@ -76,22 +48,13 @@ public class AWSS3ReaderGUI extends AbstractSamplerGui {
 	}
 
 	@Override
-	public void clearGui() {
-		super.clearGui();
-		ltfAwsKey.setText("");
-		ltfAwsSecret.setText("");
-		ltfAwsBucket.setText("");
-		ltfObject.setText("");
-	}
-
-	@Override
 	public String getLabelResource() {
-		return "AWS S3 Reader";
+		return "S3 Reader";
 	}
 
 	@Override
 	public String getStaticLabel() {
-		return "AWS S3 Reader";
+		return "S3 Reader";
 	}
 
 }

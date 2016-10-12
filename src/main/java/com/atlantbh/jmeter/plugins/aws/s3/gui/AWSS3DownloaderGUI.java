@@ -1,57 +1,20 @@
 package com.atlantbh.jmeter.plugins.aws.s3.gui;
 
-import java.awt.BorderLayout;
-
-import javax.swing.BorderFactory;
-
-import org.apache.jmeter.gui.util.VerticalPanel;
-import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
-import org.apache.jmeter.testelement.TestElement;
-import org.apache.jorphan.gui.JLabeledTextField;
-
 import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Downloader;
+import org.apache.jmeter.testelement.TestElement;
 
-public class AWSS3DownloaderGUI extends AbstractSamplerGui {
-
+public class AWSS3DownloaderGUI extends BaseS3GUISampler {
 	private static final long serialVersionUID = 1L;
-	private JLabeledTextField ltfAwsKey = null;
-	private JLabeledTextField ltfAwsSecret = null;
-	private JLabeledTextField ltfAwsBucket = null;
-	private JLabeledTextField ltfObject = null;
-	private JLabeledTextField ltfDestination = null;
+
 
 	public AWSS3DownloaderGUI() {
-		super();
-		this.init();
+		super(true);
 	}
-
-	private void init() {
-		setLayout(new BorderLayout());
-		setBorder(makeBorder());
-		add(makeTitlePanel(), BorderLayout.NORTH);
-
-		VerticalPanel panel = new VerticalPanel();
-		panel.setBorder(BorderFactory.createEtchedBorder());
-
-		ltfAwsKey = new JLabeledTextField("AWS Key");
-		ltfAwsSecret = new JLabeledTextField("AWS Secret");
-		ltfAwsBucket = new JLabeledTextField("AWS Bucket");
-		ltfObject = new JLabeledTextField("AWS Object");
-		ltfDestination = new JLabeledTextField("Destination dir");
-
-		panel.add(ltfAwsKey);
-		panel.add(ltfAwsSecret);
-		panel.add(ltfAwsBucket);
-		panel.add(ltfObject);
-		panel.add(ltfDestination);
-		add(panel, BorderLayout.CENTER);
-	}
-
 	@Override
 	public TestElement createTestElement() {
-		AWSS3Downloader downlaoder = new AWSS3Downloader();
-		modifyTestElement(downlaoder);
-		return downlaoder;
+		AWSS3Downloader downloader = new AWSS3Downloader();
+		modifyTestElement(downloader);
+		return downloader;
 	}
 
 	@Override
@@ -80,24 +43,15 @@ public class AWSS3DownloaderGUI extends AbstractSamplerGui {
 		}
 	}
 
-	@Override
-	public void clearGui() {
-		super.clearGui();
-		ltfAwsKey.setText("");
-		ltfAwsSecret.setText("");
-		ltfAwsBucket.setText("");
-		ltfObject.setText("");
-		ltfDestination.setText("");
-	}
 
 	@Override
 	public String getLabelResource() {
-		return "AWS S3 Downlaoder";
+		return "S3 Downloader";
 	}
 
 	@Override
 	public String getStaticLabel() {
-		return "AWS S3 Downlaoder";
+		return "S3 Downloader";
 	}
 
 }

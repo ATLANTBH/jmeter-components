@@ -1,17 +1,10 @@
 package com.atlantbh.jmeter.plugins.aws.s3.gui;
 
-import java.awt.BorderLayout;
-
-import javax.swing.BorderFactory;
-
-import org.apache.jmeter.gui.util.VerticalPanel;
-import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
+import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Uploader;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jorphan.gui.JLabeledTextField;
 
-import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Uploader;
-
-public class AWSS3UploaderGUI extends AbstractSamplerGui {
+public class AWSS3UploaderGUI extends BaseS3GUISampler {
 
 	private static final long serialVersionUID = 1L;
 	private JLabeledTextField ltfAwsKey = null;
@@ -21,30 +14,7 @@ public class AWSS3UploaderGUI extends AbstractSamplerGui {
 	private JLabeledTextField ltfDestination = null;
 
 	public AWSS3UploaderGUI() {
-		super();
-		this.init();
-	}
-
-	private void init() {
-		setLayout(new BorderLayout());
-		setBorder(makeBorder());
-		add(makeTitlePanel(), BorderLayout.NORTH);
-
-		VerticalPanel panel = new VerticalPanel();
-		panel.setBorder(BorderFactory.createEtchedBorder());
-
-		ltfAwsKey = new JLabeledTextField("AWS Key");
-		ltfAwsSecret = new JLabeledTextField("AWS Secret");
-		ltfAwsBucket = new JLabeledTextField("AWS Bucket");
-		ltfFile = new JLabeledTextField("File");
-		ltfDestination = new JLabeledTextField("S3 Destination");
-
-		panel.add(ltfAwsKey);
-		panel.add(ltfAwsSecret);
-		panel.add(ltfAwsBucket);
-		panel.add(ltfFile);
-		panel.add(ltfDestination);
-		add(panel, BorderLayout.CENTER);
+		super(true);
 	}
 
 	@Override
@@ -81,23 +51,13 @@ public class AWSS3UploaderGUI extends AbstractSamplerGui {
 	}
 
 	@Override
-	public void clearGui() {
-		super.clearGui();
-		ltfAwsKey.setText("");
-		ltfAwsSecret.setText("");
-		ltfAwsBucket.setText("");
-		ltfFile.setText("");
-		ltfDestination.setText("");
-	}
-
-	@Override
 	public String getLabelResource() {
-		return "AWS S3 Uploader";
+		return "S3 Uploader";
 	}
 
 	@Override
 	public String getStaticLabel() {
-		return "AWS S3 Uploader";
+		return "S3 Uploader";
 	}
 
 }
