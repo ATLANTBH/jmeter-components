@@ -89,6 +89,16 @@ public abstract class BaseS3Sampler extends AbstractSampler {
 		return getPropertyAsString(DESTINATION);
 	}
 
+
+	/**
+	 * Gets endpoint.
+	 *
+	 * @return the endpoint
+	 */
+	public String getEndpoint() {
+		return getPropertyAsString(ENDPOINT);
+	}
+
 	/**
 	 * Sets key.
 	 *

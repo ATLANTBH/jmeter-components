@@ -8,7 +8,7 @@ public class AWSS3DownloaderGUI extends BaseS3GUISampler {
 
 
 	public AWSS3DownloaderGUI() {
-		super(true);
+		super(true, false);
 	}
 	@Override
 	public TestElement createTestElement() {
@@ -25,8 +25,9 @@ public class AWSS3DownloaderGUI extends BaseS3GUISampler {
 			d.setKey(ltfAwsKey.getText());
 			d.setSecret(ltfAwsSecret.getText());
 			d.setBucket(ltfAwsBucket.getText());
-			d.setDestination(this.ltfDestination.getText());
-			d.setObject(this.ltfObject.getText());
+			d.setDestination(ltfDestination.getText());
+			d.setObject(ltfObject.getText());
+			d.setEndpoint(ltfAwsEndpoint.getText());
 		}
 	}
 
@@ -40,6 +41,7 @@ public class AWSS3DownloaderGUI extends BaseS3GUISampler {
 			ltfAwsBucket.setText(d.getBucket());
 			ltfDestination.setText(d.getDestination());
 			ltfObject.setText(d.getObject());
+			ltfAwsEndpoint.setText(d.getEndpoint());
 		}
 	}
 

@@ -2,19 +2,13 @@ package com.atlantbh.jmeter.plugins.aws.s3.gui;
 
 import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Uploader;
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jorphan.gui.JLabeledTextField;
 
 public class AWSS3UploaderGUI extends BaseS3GUISampler {
 
 	private static final long serialVersionUID = 1L;
-	private JLabeledTextField ltfAwsKey = null;
-	private JLabeledTextField ltfAwsSecret = null;
-	private JLabeledTextField ltfAwsBucket = null;
-	private JLabeledTextField ltfFile = null;
-	private JLabeledTextField ltfDestination = null;
 
 	public AWSS3UploaderGUI() {
-		super(true);
+		super(true, true);
 	}
 
 	@Override
@@ -32,8 +26,8 @@ public class AWSS3UploaderGUI extends BaseS3GUISampler {
 			u.setKey(ltfAwsKey.getText());
 			u.setSecret(ltfAwsSecret.getText());
 			u.setBucket(ltfAwsBucket.getText());
-			u.setDestination(this.ltfDestination.getText());
-			u.setObject(this.ltfFile.getText());
+			u.setDestination(ltfDestination.getText());
+			u.setObject(ltfFile.getText());
 		}
 	}
 

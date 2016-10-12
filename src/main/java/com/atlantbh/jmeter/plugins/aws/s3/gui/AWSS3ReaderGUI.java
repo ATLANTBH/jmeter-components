@@ -2,18 +2,12 @@ package com.atlantbh.jmeter.plugins.aws.s3.gui;
 
 import com.atlantbh.jmeter.plugins.aws.s3.AWSS3Reader;
 import org.apache.jmeter.testelement.TestElement;
-import org.apache.jorphan.gui.JLabeledTextField;
 
 public class AWSS3ReaderGUI extends BaseS3GUISampler {
-
 	private static final long serialVersionUID = 1L;
-	private JLabeledTextField ltfAwsKey = null;
-	private JLabeledTextField ltfAwsSecret = null;
-	private JLabeledTextField ltfAwsBucket = null;
-	private JLabeledTextField ltfObject = null;
 
 	public AWSS3ReaderGUI() {
-		super(false);
+		super(false, false);
 	}
 
 	@Override
@@ -30,6 +24,7 @@ public class AWSS3ReaderGUI extends BaseS3GUISampler {
 			AWSS3Reader d = (AWSS3Reader) element;
 			d.setKey(ltfAwsKey.getText());
 			d.setSecret(ltfAwsSecret.getText());
+			d.setEndpoint(ltfAwsEndpoint.getText());
 			d.setBucket(ltfAwsBucket.getText());
 			d.setObject(ltfObject.getText());
 		}
@@ -44,6 +39,7 @@ public class AWSS3ReaderGUI extends BaseS3GUISampler {
 			ltfAwsSecret.setText(d.getSecret());
 			ltfAwsBucket.setText(d.getBucket());
 			ltfObject.setText(d.getObject());
+			ltfAwsEndpoint.setText(d.getEndpoint());
 		}
 	}
 

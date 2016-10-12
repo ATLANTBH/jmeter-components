@@ -20,16 +20,20 @@ public abstract class BaseS3GUISampler extends AbstractSamplerGui {
 	protected JLabeledTextField ltfAwsBucket = null;
 	protected JLabeledTextField ltfObject = null;
 	protected JLabeledTextField ltfDestination = null;
+	protected JLabeledTextField ltfFile = null;
 
 	private Boolean enableDestination = false;
+	private Boolean enableFile = false;
 
 	/**
 	 * Creates new {@link BaseS3GUISampler}.
 	 * @param enableDestination if <code>true</code> destination field will be rendered
+	 * @param enableFile if <code>true</code> file field will be rendered
 	 */
-	public BaseS3GUISampler(Boolean enableDestination) {
+	public BaseS3GUISampler(Boolean enableDestination, Boolean enableFile) {
 		super();
 		this.enableDestination = enableDestination;
+		this.enableFile = enableFile;
 		this.init();
 	}
 
@@ -54,11 +58,19 @@ public abstract class BaseS3GUISampler extends AbstractSamplerGui {
 			ltfDestination = new JLabeledTextField("Destination dir");
 		}
 
+		if (enableFile) {
+			ltfFile = new JLabeledTextField("File");
+		}
+
 		panel.add(ltfAwsKey);
 		panel.add(ltfAwsSecret);
 		panel.add(ltfAwsEndpoint);
 		panel.add(ltfAwsBucket);
 		panel.add(ltfObject);
+
+		if (enableFile) {
+			panel.add(ltfFile);
+		}
 
 		if (enableDestination) {
 			panel.add(ltfDestination);
@@ -79,6 +91,10 @@ public abstract class BaseS3GUISampler extends AbstractSamplerGui {
 
 		if (enableDestination) {
 			ltfDestination.setText("");
+		}
+
+		if (enableFile) {
+			ltfFile.setText("");
 		}
 	}
 }
