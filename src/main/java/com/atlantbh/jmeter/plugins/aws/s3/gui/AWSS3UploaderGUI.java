@@ -28,6 +28,7 @@ public class AWSS3UploaderGUI extends BaseS3GUISampler {
 			u.setBucket(ltfAwsBucket.getText());
 			u.setDestination(ltfDestination.getText());
 			u.setObject(ltfFile.getText());
+			u.setEndpoint(ltfAwsEndpoint.getText());
 		}
 	}
 
@@ -41,6 +42,7 @@ public class AWSS3UploaderGUI extends BaseS3GUISampler {
 			ltfAwsBucket.setText(u.getBucket());
 			ltfDestination.setText(u.getDestination());
 			ltfFile.setText(u.getObject());
+			ltfAwsEndpoint.setText(u.getEndpoint());
 		}
 	}
 
