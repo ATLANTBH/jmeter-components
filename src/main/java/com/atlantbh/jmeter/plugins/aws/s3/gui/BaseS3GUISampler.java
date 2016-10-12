@@ -75,10 +75,10 @@ public abstract class BaseS3GUISampler extends AbstractSamplerGui {
 		ltfAwsSecret.setText("");
 		ltfAwsBucket.setText("");
 		ltfObject.setText("");
-		ltfDestination.setText("");
+		ltfAwsEndpoint.setText("");
 
-		if (ltfAwsEndpoint != null) {
-			ltfAwsEndpoint.setText("");
+		if (enableDestination) {
+			ltfDestination.setText("");
 		}
 	}
 }
