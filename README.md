@@ -31,8 +31,6 @@ developed by AtlantBH that currently includes:
 
 +	JTL Results Parser	
 
-For more information about individual components, please visit: http://www.atlantbh.com/jmeter-components/
-
 
 Requirements
 -----------------------
