@@ -24,22 +24,25 @@ import org.xml.sax.InputSource;
  */
 public class XmlUtil {
 
-private static Transformer transformer;
-private static DocumentBuilder builder;
+private final static Transformer transformer;
+private final static DocumentBuilder builder;
 	
 	static {
+		Transformer tmpTransformer = null;
+		DocumentBuilder tmpBuilder = null;
 		try{
-			transformer = TransformerFactory.newInstance().newTransformer();
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			tmpTransformer = TransformerFactory.newInstance().newTransformer();
+			tmpTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			tmpTransformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+			tmpBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		}
 		catch (Exception e)
 		{
 			System.out.println(e.getMessage());
-			transformer = null;
-			builder = null;
 		}
+		transformer = tmpTransformer;
+		builder = tmpBuilder;
+
 	}
 	
 	/**
@@ -53,8 +56,9 @@ private static DocumentBuilder builder;
 		if (builder == null) {
 			throw new Exception("DocumentBuilder is null.");
 		}
-		return builder.parse(new InputSource(new ByteArrayInputStream(string.getBytes("UTF-8"))));
-	
+		synchronized (builder) {
+			return builder.parse(new InputSource(new ByteArrayInputStream(string.getBytes("UTF-8"))));
+		}
 	}
 	
 	/**
@@ -71,7 +75,9 @@ private static DocumentBuilder builder;
 		Source xmlSource = new DOMSource(document);
 		StringWriter stringWriter = new StringWriter();
         Result result = new StreamResult(stringWriter);
-		transformer.transform(xmlSource, result);
+        synchronized (transformer) {
+			transformer.transform(xmlSource, result);
+		}
 		return stringWriter.toString();
 	}
 }

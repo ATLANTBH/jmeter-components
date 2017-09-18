@@ -46,6 +46,9 @@ public class XMLFormatPostProcessor extends AbstractTestElement implements
 			threadContext.getPreviousResult().setResponseData(serialize2(responseString).getBytes("UTF-8"));
 		} catch (Exception e) {
 			log.info("Error while formating response xml - " + e.getMessage());
+			if (e.getMessage() == null) {
+				log.info("Message is null, showing throwable: ", e);
+			}
 		}
 	}
 
