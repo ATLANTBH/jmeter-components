@@ -6,3 +6,8 @@
 .idea/
 *.iml
 target
+
+.DS_Store
+jmeter.log
+root.log
+tmp/
